@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Tags vs ASP.NET Web Forms Controls - Study Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #2e6c80;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: white;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        code {
+            background-color: #eef;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .code-block {
+            background-color: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            white-space: pre-wrap;
+            overflow-x: auto;
+            font-family: Consolas, monospace;
+        }
+    </style>
+</head>
+<body>
+    <H1>CrazyCat (=^_^=) Sankalp Bhosale</H1>
+    <h1>HTML Tags vs ASP.NET Web Forms Controls</h1>
+    <p>This guide lists common HTML tags alongside their ASP.NET equivalents, helping you bridge client-side and server-side development.</p>
+
+    <h2>Document Structure</h2>
+    <table>
+        <tr><th>HTML Tag</th><th>ASP.NET Equivalent</th><th>Description</th></tr>
+        <tr><td>&lt;html&gt;</td><td>&lt;html runat="server"&gt;</td><td>Enables server-side rendering.</td></tr>
+        <tr><td>&lt;head&gt;</td><td>&lt;head runat="server"&gt;</td><td>Container for metadata, title, links, etc.</td></tr>
+        <tr><td>&lt;body&gt;</td><td>&lt;body runat="server"&gt;</td><td>Main body of the page.</td></tr>
+    </table>
+
+    <h2>Form and Input Controls</h2>
+    <table>
+        <tr><th>HTML Tag</th><th>ASP.NET Control</th><th>Description</th></tr>
+        <tr><td>&lt;input type="text"&gt;</td><td>&lt;asp:TextBox /&gt;</td><td>Text input field.</td></tr>
+        <tr><td>&lt;input type="password"&gt;</td><td>&lt;asp:TextBox TextMode="Password" /&gt;</td><td>Password input field.</td></tr>
+        <tr><td>&lt;input type="checkbox"&gt;</td><td>&lt;asp:CheckBox /&gt;</td><td>Checkbox input.</td></tr>
+        <tr><td>&lt;input type="radio"&gt;</td><td>&lt;asp:RadioButton GroupName="..." /&gt;</td><td>Radio button.</td></tr>
+        <tr><td>&lt;input type="submit"&gt;</td><td>&lt;asp:Button /&gt;</td><td>Form submit button.</td></tr>
+        <tr><td>&lt;textarea&gt;</td><td>&lt;asp:TextBox TextMode="MultiLine" /&gt;</td><td>Multiline text input.</td></tr>
+        <tr><td>&lt;select&gt;</td><td>&lt;asp:DropDownList&gt;</td><td>Dropdown selector.</td></tr>
+    </table>
+
+    <h2>Lists and Tables</h2>
+    <table>
+        <tr><th>HTML Tag</th><th>ASP.NET Equivalent</th><th>Description</th></tr>
+        <tr><td>&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;</td><td>Use HTML</td><td>Unordered and ordered lists.</td></tr>
+        <tr><td>&lt;table&gt;</td><td>&lt;asp:Table&gt;</td><td>Dynamic tables via code.</td></tr>
+        <tr><td>&lt;tr&gt;, &lt;td&gt;</td><td>&lt;asp:TableRow&gt;, &lt;asp:TableCell&gt;</td><td>Table structure in ASP.NET.</td></tr>
+        <tr><td>&lt;th&gt;</td><td>&lt;asp:TableHeaderCell&gt;</td><td>Header cell.</td></tr>
+    </table>
+
+    <h2>Navigation and Media</h2>
+    <table>
+        <tr><th>HTML Tag</th><th>ASP.NET Equivalent</th><th>Description</th></tr>
+        <tr><td>&lt;a href="..."&gt;</td><td>&lt;asp:HyperLink NavigateUrl="..." /&gt;</td><td>Navigation link.</td></tr>
+        <tr><td>&lt;img src="..."&gt;</td><td>&lt;asp:Image ImageUrl="..." /&gt;</td><td>Image element.</td></tr>
+        <tr><td>&lt;video&gt;, &lt;audio&gt;</td><td>Use HTML</td><td>Multimedia support.</td></tr>
+    </table>
+
+    <h2>Layout and Containers</h2>
+    <table>
+        <tr><th>HTML Tag</th><th>ASP.NET Equivalent</th><th>Description</th></tr>
+        <tr><td>&lt;div&gt;</td><td>&lt;asp:Panel /&gt; or &lt;div runat="server"&gt;</td><td>Content container.</td></tr>
+        <tr><td>&lt;span&gt;</td><td>&lt;asp:Label /&gt;</td><td>Inline container.</td></tr>
+    </table>
+
+    <h2>ASP.NET Specific Controls</h2>
+    <table>
+        <tr><th>Control</th><th>Description</th></tr>
+        <tr><td>&lt;asp:GridView&gt;</td><td>Display tabular data with sorting and paging.</td></tr>
+        <tr><td>&lt;asp:Repeater&gt;</td><td>Custom template-based data display.</td></tr>
+        <tr><td>&lt;asp:DataList&gt;</td><td>Repeating list control.</td></tr>
+        <tr><td>&lt;asp:Calendar&gt;</td><td>Calendar UI control.</td></tr>
+        <tr><td>&lt;asp:FileUpload&gt;</td><td>File upload control.</td></tr>
+        <tr><td>&lt;asp:Login&gt;</td><td>Authentication login form.</td></tr>
+    </table>
+
+    <h2>Example: ASP.NET Registration Form</h2>
+    <div class="code-block">
+&lt;form id="form1" runat="server"&gt;
+    &lt;asp:Label ID="lblName" Text="Name:" runat="server" /&gt;&lt;br /&gt;
+    &lt;asp:TextBox ID="txtName" runat="server" /&gt;&lt;br /&gt;
+
+    &lt;asp:Label ID="lblEmail" Text="Email:" runat="server" /&gt;&lt;br /&gt;
+    &lt;asp:TextBox ID="txtEmail" runat="server" /&gt;&lt;br /&gt;
+
+    &lt;asp:Button ID="btnSubmit" Text="Submit" runat="server" /&gt;
+&lt;/form&gt;
+    </div>
+
+    <p><strong>Tip:</strong> You can copy and paste this code into a `.aspx` file in Visual Studio and run it to see how it works.</p>
+</body>
+</html>
